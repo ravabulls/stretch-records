@@ -1,0 +1,523 @@
+/* ==========================================================================
+   STRETCH RECORDS — EDITORIAL CATALOG STYLESHEET
+   ========================================================================== */
+
+/* 1. Reset & Global Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #f2f2ef;
+  --bg-alt: #e7e7e2;
+  --bg-card: #ffffff;
+  --text-main: #0d0d0d;
+  --text-muted: #555550;
+  --text-subtle: #888880;
+  --accent-orange: #ff3e11;
+  --border-color: #1a1a1a;
+  --border-light: #d1d1cc;
+}
+
+html {
+  /* Lesson requirement: 62.5% base sets 1rem = 10px */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   2. REUSABLE TYPOGRAPHY & ELEMENTS
+   ========================================================================== */
+
+.kicker {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  margin-bottom: 0.8rem;
+}
+
+/* ==========================================================================
+   3. HEADER & JUMP NAVIGATION
+   ========================================================================== */
+
+.site-header {
+  border-bottom: 2px solid var(--border-color);
+  padding: 2.4rem 4rem 4.8rem;
+}
+
+.header-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2.4rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.catalog-code {
+  color: var(--text-subtle);
+  font-weight: 600;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 6rem;
+  align-items: start;
+}
+
+.intro-block h1 {
+  font-size: 6.4rem;
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  margin-bottom: 2.4rem;
+}
+
+.subheading {
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  max-width: 48ch;
+  line-height: 1.45;
+}
+
+/* Jump Navigation Box */
+.jump-nav {
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  box-shadow: 4px 4px 0px var(--border-color);
+}
+
+.jump-nav-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--text-subtle);
+  padding: 1.2rem 1.6rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+}
+
+.jump-nav ul {
+  list-style: none;
+}
+
+.jump-nav li {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.jump-nav li:last-child {
+  border-bottom: none;
+}
+
+.jump-nav a {
+  display: block;
+  padding: 1.4rem 1.6rem;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.jump-nav a:hover,
+.jump-nav a:focus-visible {
+  background-color: var(--text-main);
+  color: #ffffff;
+}
+
+.jump-nav a:hover .nav-genre,
+.jump-nav a:focus-visible .nav-genre {
+  color: var(--accent-orange);
+}
+
+.nav-artist {
+  font-size: 1.5rem;
+  font-weight: 700;
+  float: left;
+}
+
+.nav-genre {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+  float: right;
+  margin-top: 0.3rem;
+  transition: color 0.15s ease;
+}
+
+/* Clearfix for float layout inside links */
+.jump-nav a::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ==========================================================================
+   4. ARTIST SECTIONS
+   ========================================================================== */
+
+.artist-section {
+  padding: 5.6rem 4rem 6.4rem;
+  border-bottom: 2px solid var(--border-color);
+  background-color: var(--bg-primary);
+}
+
+.artist-header {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 3.2rem;
+  align-items: start;
+  margin-bottom: 3.6rem;
+}
+
+/* 96px circle avatar requirement */
+.artist-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+}
+
+.artist-meta-block h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.6rem;
+}
+
+.artist-stats {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--text-subtle);
+  margin-bottom: 1.6rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.artist-blurb {
+  font-size: 1.7rem;
+  color: var(--text-muted);
+  max-width: 65ch;
+  line-height: 1.45;
+}
+
+/* Alternate Section Stripe via nth-of-type(even) */
+.artist-section:nth-of-type(even) {
+  background-color: var(--bg-alt);
+}
+
+/* ==========================================================================
+   5. SONG CARDS (FLEXBOX USAGE — LOCATIONS 1 & 2)
+   ========================================================================== */
+
+/* FLEXBOX LOCATION 1: The row of 5 song cards */
+.song-row {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.song-card {
+  flex: 1;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  box-shadow: 3px 3px 0px var(--border-color);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.song-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0px var(--border-color);
+}
+
+.song-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* FLEXBOX LOCATION 2: Left title/rank, right duration line */
+.song-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.4rem;
+  background-color: var(--bg-card);
+  font-size: 1.3rem;
+}
+
+.song-rank-title {
+  font-weight: 700;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 0.8rem;
+}
+
+.song-rank {
+  color: var(--accent-orange);
+  font-weight: 800;
+  margin-right: 0.5rem;
+}
+
+.song-duration {
+  font-weight: 600;
+  color: var(--text-subtle);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   6. NEWSLETTER SIGNUP SECTION
+   ========================================================================== */
+
+.newsletter-section {
+  padding: 6.4rem 4rem;
+  background-color: var(--bg-primary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 6rem;
+  align-items: start;
+}
+
+.newsletter-copy h2 {
+  font-size: 4.4rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.6rem;
+}
+
+.newsletter-copy p {
+  font-size: 1.7rem;
+  color: var(--text-muted);
+  max-width: 48ch;
+}
+
+/* Form Styles */
+.newsletter-form {
+  background-color: var(--bg-card);
+  padding: 3.2rem;
+  border: 2px solid var(--border-color);
+  box-shadow: 4px 4px 0px var(--border-color);
+}
+
+.field-group {
+  margin-bottom: 2.4rem;
+}
+
+.field-group label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 0.8rem;
+}
+
+.field-group input,
+.field-group select {
+  width: 100%;
+  padding: 1.4rem 1.6rem;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background-color: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "↓";
+  font-weight: 800;
+  font-size: 1.4rem;
+  position: absolute;
+  right: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text-main);
+}
+
+/* Lesson 7: Focus styling */
+.field-group input:focus,
+.field-group select:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 1px var(--accent-orange);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1.6rem 2rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  background-color: var(--accent-orange);
+  border: 2px solid var(--border-color);
+  box-shadow: 3px 3px 0px var(--border-color);
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.submit-button:hover {
+  background-color: #e0320a;
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px var(--border-color);
+}
+
+.submit-button:focus-visible {
+  outline: 3px solid var(--text-main);
+  outline-offset: 2px;
+}
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+
+.site-footer {
+  padding: 3.2rem 4rem;
+  background-color: var(--bg-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-subtle);
+  border-top: 1px solid var(--border-light);
+}
+
+.copyright {
+  float: left;
+}
+
+.back-to-top {
+  float: right;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+  transition: color 0.15s ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  color: var(--text-main);
+  text-decoration: underline;
+}
+
+.site-footer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE BEHAVIOR (STRETCH GOAL)
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .header-grid,
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .artist-header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .song-row {
+    flex-wrap: wrap;
+  }
+
+  .song-card {
+    flex: 1 1 calc(50% - 1.8rem);
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 550px) {
+  .site-header,
+  .artist-section,
+  .newsletter-section,
+  .site-footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .intro-block h1 {
+    font-size: 4.4rem;
+  }
+
+  .song-card {
+    flex: 1 1 100%;
+  }
+
+  .copyright,
+  .back-to-top {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+
+  .back-to-top {
+    margin-top: 1.6rem;
+  }
+}
