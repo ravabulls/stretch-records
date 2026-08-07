@@ -178,3 +178,119 @@ a {
   display: table;
   clear: both;
 }
+
+/* ==========================================================================
+   4. ARTIST SECTIONS
+   ========================================================================== */
+
+.artist-section {
+  padding: 5.6rem 4rem 6.4rem;
+  border-bottom: 2px solid var(--border-color);
+  background-color: var(--bg-primary);
+}
+
+.artist-header {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 3.2rem;
+  align-items: start;
+  margin-bottom: 3.6rem;
+}
+
+/* 96px circle avatar requirement */
+.artist-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+}
+
+.artist-meta-block h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.6rem;
+}
+
+.artist-stats {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--text-subtle);
+  margin-bottom: 1.6rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.artist-blurb {
+  font-size: 1.7rem;
+  color: var(--text-muted);
+  max-width: 65ch;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   5. SONG CARDS (FLEXBOX USAGE — LOCATIONS 1 & 2)
+   ========================================================================== */
+
+/* FLEXBOX LOCATION 1: The row of 5 song cards */
+.song-row {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.song-card {
+  flex: 1;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  box-shadow: 3px 3px 0px var(--border-color);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.song-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0px var(--border-color);
+}
+
+.song-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* FLEXBOX LOCATION 2: Left title/rank, right duration line */
+.song-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.4rem;
+  background-color: var(--bg-card);
+  font-size: 1.3rem;
+}
+
+.song-rank-title {
+  font-weight: 700;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 0.8rem;
+}
+
+.song-rank {
+  color: var(--accent-orange);
+  font-weight: 800;
+  margin-right: 0.5rem;
+}
+
+.song-duration {
+  font-weight: 600;
+  color: var(--text-subtle);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
