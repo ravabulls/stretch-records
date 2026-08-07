@@ -47,6 +47,12 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* ==========================================================================
    2. REUSABLE TYPOGRAPHY & ELEMENTS
    ========================================================================== */
@@ -230,6 +236,11 @@ a {
   line-height: 1.45;
 }
 
+/* Alternate Section Stripe via nth-of-type(even) */
+.artist-section:nth-of-type(even) {
+  background-color: var(--bg-alt);
+}
+
 /* ==========================================================================
    5. SONG CARDS (FLEXBOX USAGE — LOCATIONS 1 & 2)
    ========================================================================== */
@@ -293,4 +304,41 @@ a {
   color: var(--text-subtle);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+
+.site-footer {
+  padding: 3.2rem 4rem;
+  background-color: var(--bg-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-subtle);
+  border-top: 1px solid var(--border-light);
+}
+
+.copyright {
+  float: left;
+}
+
+.back-to-top {
+  float: right;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+  transition: color 0.15s ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  color: var(--text-main);
+  text-decoration: underline;
+}
+
+.site-footer::after {
+  content: "";
+  display: table;
+  clear: both;
 }
