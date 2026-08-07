@@ -1,0 +1,180 @@
+/* ==========================================================================
+   STRETCH RECORDS — EDITORIAL CATALOG STYLESHEET
+   ========================================================================== */
+
+/* 1. Reset & Global Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #f2f2ef;
+  --bg-alt: #e7e7e2;
+  --bg-card: #ffffff;
+  --text-main: #0d0d0d;
+  --text-muted: #555550;
+  --text-subtle: #888880;
+  --accent-orange: #ff3e11;
+  --border-color: #1a1a1a;
+  --border-light: #d1d1cc;
+}
+
+html {
+  /* Lesson requirement: 62.5% base sets 1rem = 10px */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   2. REUSABLE TYPOGRAPHY & ELEMENTS
+   ========================================================================== */
+
+.kicker {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  margin-bottom: 0.8rem;
+}
+
+/* ==========================================================================
+   3. HEADER & JUMP NAVIGATION
+   ========================================================================== */
+
+.site-header {
+  border-bottom: 2px solid var(--border-color);
+  padding: 2.4rem 4rem 4.8rem;
+}
+
+.header-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2.4rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.catalog-code {
+  color: var(--text-subtle);
+  font-weight: 600;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 6rem;
+  align-items: start;
+}
+
+.intro-block h1 {
+  font-size: 6.4rem;
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  margin-bottom: 2.4rem;
+}
+
+.subheading {
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  max-width: 48ch;
+  line-height: 1.45;
+}
+
+/* Jump Navigation Box */
+.jump-nav {
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  box-shadow: 4px 4px 0px var(--border-color);
+}
+
+.jump-nav-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--text-subtle);
+  padding: 1.2rem 1.6rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+}
+
+.jump-nav ul {
+  list-style: none;
+}
+
+.jump-nav li {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.jump-nav li:last-child {
+  border-bottom: none;
+}
+
+.jump-nav a {
+  display: block;
+  padding: 1.4rem 1.6rem;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.jump-nav a:hover,
+.jump-nav a:focus-visible {
+  background-color: var(--text-main);
+  color: #ffffff;
+}
+
+.jump-nav a:hover .nav-genre,
+.jump-nav a:focus-visible .nav-genre {
+  color: var(--accent-orange);
+}
+
+.nav-artist {
+  font-size: 1.5rem;
+  font-weight: 700;
+  float: left;
+}
+
+.nav-genre {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+  float: right;
+  margin-top: 0.3rem;
+  transition: color 0.15s ease;
+}
+
+/* Clearfix for float layout inside links */
+.jump-nav a::after {
+  content: "";
+  display: table;
+  clear: both;
+}
