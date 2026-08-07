@@ -307,6 +307,130 @@ img {
 }
 
 /* ==========================================================================
+   6. NEWSLETTER SIGNUP SECTION
+   ========================================================================== */
+
+.newsletter-section {
+  padding: 6.4rem 4rem;
+  background-color: var(--bg-primary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 6rem;
+  align-items: start;
+}
+
+.newsletter-copy h2 {
+  font-size: 4.4rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.6rem;
+}
+
+.newsletter-copy p {
+  font-size: 1.7rem;
+  color: var(--text-muted);
+  max-width: 48ch;
+}
+
+/* Form Styles */
+.newsletter-form {
+  background-color: var(--bg-card);
+  padding: 3.2rem;
+  border: 2px solid var(--border-color);
+  box-shadow: 4px 4px 0px var(--border-color);
+}
+
+.field-group {
+  margin-bottom: 2.4rem;
+}
+
+.field-group label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 0.8rem;
+}
+
+.field-group input,
+.field-group select {
+  width: 100%;
+  padding: 1.4rem 1.6rem;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background-color: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "↓";
+  font-weight: 800;
+  font-size: 1.4rem;
+  position: absolute;
+  right: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text-main);
+}
+
+/* Lesson 7: Focus styling */
+.field-group input:focus,
+.field-group select:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 1px var(--accent-orange);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1.6rem 2rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  background-color: var(--accent-orange);
+  border: 2px solid var(--border-color);
+  box-shadow: 3px 3px 0px var(--border-color);
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.submit-button:hover {
+  background-color: #e0320a;
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px var(--border-color);
+}
+
+.submit-button:focus-visible {
+  outline: 3px solid var(--text-main);
+  outline-offset: 2px;
+}
+/* ==========================================================================
    7. FOOTER
    ========================================================================== */
 
@@ -341,4 +465,59 @@ img {
   content: "";
   display: table;
   clear: both;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE BEHAVIOR (STRETCH GOAL)
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .header-grid,
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .artist-header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .song-row {
+    flex-wrap: wrap;
+  }
+
+  .song-card {
+    flex: 1 1 calc(50% - 1.8rem);
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 550px) {
+  .site-header,
+  .artist-section,
+  .newsletter-section,
+  .site-footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .intro-block h1 {
+    font-size: 4.4rem;
+  }
+
+  .song-card {
+    flex: 1 1 100%;
+  }
+
+  .copyright,
+  .back-to-top {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+
+  .back-to-top {
+    margin-top: 1.6rem;
+  }
 }
